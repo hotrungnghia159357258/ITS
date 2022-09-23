@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="ProjectInternShip.AlertUC.AlertUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="820">
+    <DockPanel Background="Azure"
+               Width="820">
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="10,20,10,0"
+            FontSize="30">Configure signal logic</TextBlock>
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="10,5,10,0"
+                   FontSize="20">
+            Define the logic for triggering an alert. Use chart to view trends in data.
+        </TextBlock>
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="10,10,10,0"
+                   FontSize="25">
+            Alert logic
+        </TextBlock>
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel DockPanel.Dock="Left"
+                        Width="273">
+                <TextBlock FontSize="15"
+                          Margin="10,10,10,0">Operator</TextBlock>
+                <ComboBox Name="Operator" Margin="10,5,5,0" Height="25">
+                    <ComboBoxItem>Greater than</ComboBoxItem>
+                    <ComboBoxItem>Less than</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Left"
+                        Width="274">
+                <TextBlock FontSize="15"   
+                           Margin="10,10,10,0">Aggregation type</TextBlock>
+                <ComboBox Name="Aggregation_Type"
+                          Height="25"
+                          Margin="10,5,5,0">
+                    <ComboBoxItem  >Sum</ComboBoxItem>
+                    <ComboBoxItem >Average</ComboBoxItem>
+                    <ComboBoxItem >Max</ComboBoxItem>
+                    <ComboBoxItem >Min</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel >
+                <TextBlock FontSize="15"
+                           Margin="10,10,10,0">Threshold value</TextBlock>
+                <TextBox   Name="Threshold_Value"
+                           Background="#eaeaea"
+                           Margin="10,5,5,0"
+                           FontSize="15"
+                           Height="25"></TextBox>
+            </StackPanel>
+        </DockPanel>
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="10,10,10,0"
+                   FontSize="20">
+            Condition preview
+        </TextBlock>
+        <TextBlock Name="conditionPreview"
+                   Height="30"
+                   Margin="10,5,10,0"
+                   DockPanel.Dock="Top"></TextBlock>
+        <TextBlock DockPanel.Dock="Top"
+                   Margin="10,10,10,0"
+                   FontSize="20">Evaluated based on </TextBlock>
+
+        <StatusBar Name="StatusBar"
+                   DockPanel.Dock="Bottom"
+                   >
+            <StatusBarItem Background="SlateGray">
+                <Border BorderThickness="1"
+                            BorderBrush="Black">
+                    <Button Name="btnBack"
+                                Click="btnBack_Click"
+                                Foreground="OrangeRed"
+                                Background="DimGray"
+                                Width="100">Back</Button>
+                </Border>
+            </StatusBarItem>
+        </StatusBar>
+        
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Width="50"
+                    Margin="10"
+                    Height="25"
+                    FontSize="15"
+                    Background="#353a40"
+                    Click="btnDone_Click" 
+                    Foreground="White"
+                    HorizontalAlignment="Left">Done</Button>
+            <TextBlock Name="notify"
+                   FontSize="15"
+                   Margin="10"
+                   Foreground="Red"></TextBlock>
+        </StackPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <StackPanel DockPanel.Dock="Left"
+                        Width="410">
+                <TextBlock FontSize="15"
+                           Margin="10,5,10,0">Aggregation granularity (Period)</TextBlock>
+                <ComboBox Name="Period"
+                          Margin="10,5,10,0"
+                          Height="25">
+                    <ComboBoxItem>10 seconds</ComboBoxItem>
+                    <ComboBoxItem>1 minute</ComboBoxItem>
+                    <ComboBoxItem>3 minutes</ComboBoxItem>
+                    <ComboBoxItem>5 minutes</ComboBoxItem>
+                    <ComboBoxItem>10 minutes</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Left">
+                <TextBlock FontSize="15"
+                           Margin="10,5,10,0">Frequency of evaluation</TextBlock>
+                <ComboBox Name="Frequency_Of_Evaluation"
+                          Margin="10,5,10,0"
+                          Height="25">
+                    <ComboBoxItem>Every 10 seconds</ComboBoxItem>
+                    <ComboBoxItem>Every 30 seconds</ComboBoxItem>
+                    <ComboBoxItem>Every 1 minute</ComboBoxItem>
+                    <ComboBoxItem>Every 2 minutes</ComboBoxItem>
+                    <ComboBoxItem>Every 3 minutes</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

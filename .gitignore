@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ProjectInternShip/.vs/ProjectInternShip/FileContentIndex
+/ProjectInternShip/ProjectInternShip/obj
+/ProjectInternShip/ProjectInternShip/bin/Debug
+/ProjectInternShip/.vs
+/.vs/ProjectInternShip
+/packages
+/ProjectInternShip/bin/Debug
+/ProjectInternShip/obj/Debug

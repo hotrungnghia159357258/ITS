@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="ProjectInternShip.AdminUC.AdminUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="820">
+    <Border Background="Azure">
+        <DockPanel Height="463">
+            <TextBlock DockPanel.Dock="Top"
+                       FontSize="40"
+                       FontStyle="Italic"
+                       TextAlignment="Center"
+                       Foreground="Chocolate"
+                       TextWrapping="Wrap"
+                       Margin="10,30">
+               Hello Admin 
+            </TextBlock>
+            <StatusBar DockPanel.Dock="Bottom">
+                
+                <StatusBarItem Background="SlateGray">
+                    <Border BorderThickness="1"
+                            BorderBrush="Black">
+                        <Button Name="btnBack"
+                                Click="btnBack_Click"
+                                Foreground="OrangeRed"
+                                Background="DimGray"
+                                Width="100">Back</Button>
+                    </Border>
+                </StatusBarItem>
+            </StatusBar>
+            <ListView Name="ListUser" 
+                      Margin="10"
+                      DockPanel.Dock="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Username" Width="200" DisplayMemberBinding="{Binding Username}" />
+                        <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Password}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel>
+                <Border Background="White"
+                        Margin="5,10,5,5"
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock FontSize="20"
+                                   Margin="5,10,5,5"
+                                   TextAlignment="Center">
+                            New User Account
+                        </TextBlock>
+                        <Label>
+                            Username
+                        </Label>
+                        <TextBox x:Name="NewUsername"
+                                 Margin="5,0,5,10"
+                                 Height="25"></TextBox>
+                        <Label>Password</Label>
+                        <TextBox x:Name="NewPassword"
+                                 Margin="5,0,5,20"
+                                 Height="25"></TextBox>
+                        
+                    </StackPanel>
+                </Border>
+                <Button Name="btnAddUser"
+                        Click="btnAddUser_Click"
+                        FontSize="20"
+                        Margin="5,20,5,5">
+                    Add User
+                </Button>
+                <Button Name="btnDeleteUser"
+                        Click="btnDeleteUser_Click"
+                        FontSize="20"
+                        Margin="5,0,5,5">
+                    Delete User
+                </Button>
+            </StackPanel>
+        </DockPanel> 
+    </Border>
+</UserControl>
